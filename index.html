@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Znovunačtení stránky</title>
+</head>
+<body>
+    <h1>Nadpis</h1>
+    <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eaque in animi, corporis officiis officia ipsam aliquid deleniti voluptatibus ex numquam ipsum. Magni enim nihil, reiciendis explicabo repellat fugit perspiciatis.</p>
+    <button onclick="pridat()">Klikni</button>
+</body>
+</html>
+
+<script>
+
+    let pomocna = document.getElementById("text").innerHTML;
+
+    function pridat(){
+        document.getElementById("text").innerHTML += "Java script ";
+    }
+
+    function resetText() {
+        document.getElementById("text").innerHTML = pomocna;
+        setTimeout(resetText, 2000);
+    }
+
+    resetText();
+
+
+</script>
