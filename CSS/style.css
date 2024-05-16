@@ -13,17 +13,15 @@ body{
     justify-content: center;
 }
 
+#carouselExampleAutoplaying{
+    height: 100vh;
+}
+/*#poledni-skryt {
+    display: none;
+  }*/
 
-/*.carousel-item{
-    height: 60vh;
-  }
-
-.d-block{
-    height: 60vh;
-    width: 100vh;
-}*/
 #poledni{
-    margin-top: 15%;
+    margin-top: -85%;
 }
 
 #odpocet{
@@ -40,6 +38,17 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
 }
 
 #stale-tlacitka{
@@ -60,6 +69,69 @@ body{
     margin: 2%;
     cursor: pointer;
     width: 100%;
+}
+
+.stale-vyber:hover{
+    scale: 1.05;
+    background-color: #B62931;
+    color: #e1e1e1;
+}
+
+.stale-div{
+    margin-top: 5%;
+    display: block;
+}
+
+.stale-kat{
+    font-weight: bold;
+}
+
+.col{
+    margin-top: 3%;
+}
+
+.col-6{
+    margin-top: 3%;
+}
+
+.gramaz{
+    display: none;
+}
+
+.cena{
+    text-align: right;
+}
+
+.stale-popis{
+    font-size: small;
+    font-weight: 100;
+}
+
+#menu-img{
+    flex-direction: column;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.listek{
+    border-radius: 7px;
+    color: #B62931;
+    background-color: #e1e1e1;
+    border: none;
+    padding: 2%;
+    font-weight: 500;
+    margin: 2%;
+    cursor: pointer;
+    width: 80%;
+}
+
+.listek:hover{
+    scale: 1.05;
+    background-color: #B62931;
+    color: #e1e1e1;
 }
 
 #rezervace-div{
@@ -141,7 +213,6 @@ input[type="submit"]:hover{
 }
 
 #mapa{
-    border:  #313131 3px solid;
     width: 90vw;
     display: flex;
     flex-direction: column;
@@ -268,17 +339,32 @@ input[type="submit"]:hover{
 
 
 @media (min-width: 768px){
-    .nav-item{
-       /* itemy dal od sebe*/ 
-       
-    }
-
+    
     .h3{
         margin-top: 5%;
     }
 
     #poledni{
         margin-top: 7%;
+    }
+
+    #poledni-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        align-self: center;
+        justify-content: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        width: 80%;
+
+    }
+
+    #stale{
+        margin-top: 8%;
     }
 
     #stale-tlacitka {
@@ -291,6 +377,66 @@ input[type="submit"]:hover{
         flex-direction: row;
         margin: 1%;
         padding: 1%;
+    }
+
+    .stale-vyber:hover{
+        scale: 1.1;
+    }
+
+    #menu-celek{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        align-self: center;
+        justify-content: center;
+    }
+
+    #menu-celek{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        width: 80%;
+    }
+
+    .stale-div{
+        margin-top: 2%;
+    }
+
+    .col-6{
+        margin-top: 1%;
+    }
+
+    .col{
+        margin-top: 1%;
+    }
+
+    .gramaz{
+        display: flex;
+    }
+
+    #menu-img{
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .listek{
+        width: 15%;
+        flex-direction: row;
+        margin: 1%;
+        padding: 1%;
+        margin-top: 5%;
+    }
+
+    
+    .listek:hover{
+        scale: 1.1;
     }
 
     #rezervace-div{
@@ -313,21 +459,43 @@ input[type="submit"]:hover{
         margin-top: 5%;
     }
 
+    #adresa-p{
+        margin-top: -2%;
+    }
+    
     #onas-p{
         width: 80%;
+        align-items: left;
+    }
+
+    #mapa{
+        align-items: right;
+        align-self: right;
+
+        display: flex;
+    }
+
+    #iframe{
+        height: 30vh;
+        width: 40vw;
+        align-self: right;
+        text-align: right;
+        display: flex;
+        margin-right: 1%;
+        margin-top: -6%;
     }
 
     #recenze-div{
         flex-direction: row;
-        justify-content: space-between;
-        width: 80%; 
+        justify-content: center;
+        width: 85%; 
         margin: 0 auto;
         margin-top: -1%;
     }
 
    .recenze{
         margin: 2%;  
-        padding: 5%;
+        padding: 3%;
         width: 130%;
     }
 
@@ -356,5 +524,14 @@ input[type="submit"]:hover{
         align-items: center;
         margin: 0 auto;
         margin-top: 1%;
+    }
+
+    #footer-logo{
+        width: 70vh;
+        margin-right: 20px;
+    }
+
+    #footer-text{
+        margin-left: 70%;
     }
 }
