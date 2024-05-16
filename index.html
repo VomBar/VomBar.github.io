@@ -50,42 +50,82 @@
   </nav>
     
       
-
-  <div id="carouselExampleAutoplaying slide" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="images/img1.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="images/img2.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="images/img3.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-  </div>
-
-
-
-    <h3 id="poledni" class="h3">POLEDNÍ MENU</h3>
-    <h5 id="odpocet">Zbývá: Xh Ym</h5>
-    <div id="poledni-div" class="kus">
-        <div id="poledni-menu">
-            menu menu menu
-        </div>
+  <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+    <div class="carousel-inner h-100">
+      <div class="carousel-item active">
+        <img src="images/img1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/img2.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/img3.jpg" class="d-block w-100" alt="...">
+      </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    <i class="fa fa-chevron-down"><a href="#rezervace"></a></i>
+  </div>
+  
+
+    <div id="poledni-skryt">
+    <h3 id="poledni" class="h3">POLEDNÍ MENU</h3>
+    <h5 id="odpocet">Do konce oběda zbývá: <span id="odpocet-cas"></span></h5>
+    <div id="poledni-div" class="kus">
+          <div class="container text-left stale-div" id="poledni-polevky">
+            <div class="row">
+              <h5 class="col stale-kat">Polévky</h5>
+            </div>
+            <div class="row">
+              <div class="col gramaz">0,33l</div>
+              <div class="col-6 jidlo"> Česneková s vejcem, sýrem a bramborem, chlebové krutony</div>
+              <div class="col cena">45 ,-</div>
+            </div>
+          </div>
+
+          <div class="container text-left stale-div" id="poledni-hlavni">
+            <div class="row">
+              <h5 class="col stale-kat">Steaky a jídla z masa</h5>
+            </div>
+            <div class="row">
+              <div class="col gramaz">200g</div>
+              <div class="col-6 jidlo">Jelení kýta v šípkové omáčce, karlovarský knedlík/brambor. pyré</div>
+              <div class="col cena">169 ,-</div>
+            </div>
+            <div class="row">
+              <div class="col gramaz">150g</div>
+              <div class="col-6 jidlo">Grilované karbanátky zapečené s nivou, bramborová kaše, okurka</div>
+              <div class="col cena">159 ,-</div>
+            </div>
+            <div class="row">
+              <div class="col gramaz">150g</div>
+              <div class="col-6 jidlo">Kuřecí steak, dušená zelenina na másle, brambory/hranolky</div>
+              <div class="col cena">159 ,-</div>
+            </div>
+            <div class="row">
+              <div class="col gramaz">200g</div>
+              <div class="col-6 jidlo">Smažená sýrová variace (hermelín, eidam), brambory, tat. omáčka</div>
+              <div class="col cena">155 ,-</div>
+            </div>
+            <div class="row">
+              <div class="col gramaz">200g</div>
+              <div class="col-6 jidlo">Krutí prsa zapečená se šunkou a sýrem, šťouchané brambory</div>
+              <div class="col cena">169 ,-</div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
 
 
 
-    <h3 id="stale" class="h3">STÁLÉ MENU</h3>
+    <h3 id="stale" class="h3">NA CO MÁTE CHUŤ?</h3>
     <div id="stale-tlacitka" class="kus">
         <button id="vse" class="stale-vyber"onclick="vse()">VŠE</button>
         <button id="predkrmy" class="stale-vyber" onclick="predkrmy()">PŘEDKRMY</button>
@@ -93,10 +133,362 @@
         <button id="dezerty" class="stale-vyber" onclick="dezerty()">DEZERTY</button>
         <button id="napoje" class="stale-vyber" onclick="napoje()">NÁPOJE</button>
     </div>
-    <div id="stale-nabidka" class="kus">
     
+  <div id="menu-celek">
+    <div class="container text-left stale-div menu-item" id="polevky" data-category="predkrmy">
+      <div class="row">
+        <h5 class="col stale-kat">Polévky</h5>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,33l</div>
+        <div class="col-6 jidlo"> Gulášová s masem a bramborem</div>
+        <div class="col cena">89 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">0,33l</div>
+        <div class="col-6 jidlo">Zelňačka s klobásou a bramborem</div>
+        <div class="col cena">89 ,-</div>
+      </div>
     </div>
 
+    <div class="container text-left stale-div menu-item" id="predkrmy" data-category="predkrmy">
+      <div class="row  ">
+        <h5 class="col stale-kat">Předkrmy</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">120g</div>
+        <div class="col-6 jidlo"> Tatarák z hovězího masa, 6ks topinek</div>
+        <div class="col cena">219 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">200g</div>
+        <div class="col-6 jidlo">Grilovaná klobása s křenem a hořčicí, chléb</div>
+        <div class="col cena">129 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="kpivu" data-category="predkrmy">
+      <div class="row  ">
+        <h5 class="col stale-kat">Něco k pivu</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">100g</div>
+        <div class="col-6 jidlo"> U nás nakládaný plísňový sýr (cibule, česnek, chilli), chléb</div>
+        <div class="col cena text-right">89 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">3ks</div>
+        <div class="col-6 jidlo">Ďábelské topinky se sýrem a salátem</div>
+        <div class="col cena">129 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="steaky" data-category="hlavni">
+      <div class="row  ">
+        <h5 class="col stale-kat">Steaky a jídla z masa</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">200g</div>
+        <div class="col-6 jidlo">Grilované kuřecí stripsy v anglické slanině obalené v parmazánu</div>
+        <div class="col cena">175 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">300/400g</div>
+        <div class="col-6 jidlo">Hovězí flank steak z Argentiny dělaný v másle a bylinkách</div>
+        <div class="col cena">360/410 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="speciality" data-category="hlavni">
+      <div class="row  ">
+        <h5 class="col stale-kat">Speciality "Srdcovka"</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">150g</div>
+        <div class="col-6 jidlo">Hovězí guláš na tankovém pivu "Gambrinus" s cibulí a feferonkou, houskový knedlík</div>
+        <div class="col cena">215 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">10ks</div>
+        <div class="col-6 jidlo">Křupavá kuřecí křidélka v naši BBQ omáčce podávaná na ledovém salátu, rozpečená bageta</div>
+        <div class="col cena">195 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="bezmasa" data-category="hlavni">
+      <div class="row  ">
+        <h5 class="col stale-kat">Bezmasá jídla</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">100g</div>
+        <div class="col-6 jidlo">Grilovaný plísňový sýr na lůžku pečených Grenaille s restovanými fazolkami a česnekovým dipem</div>
+        <div class="col cena">185 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="burgery" data-category="hlavni">
+      <div class="row  ">
+        <h5 class="col stale-kat">Burgery</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">150g</div>
+        <div class="col-6 jidlo">Srdcovka BEEF burger v naší cibulové bulce <br><span class="stale-popis">(hovězí maso ANGUS, opečená slanina, listový salát, rajče, karamelizovaná cibule, čedar, sázené vejce, chipotle dip)</span></div>
+        <div class="col cena">199 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">150g</div>
+        <div class="col-6 jidlo">Jalapeños BEEF burger v naši cibulové bulce<br><span class="stale-popis">(hovězí maso ANGUS, opečená slanina, jalapeños papričky, listový salát, rajče, čedar, chipotle dip)</span></div>
+        <div class="col cena">199 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="quesadilla" data-category="hlavni">
+      <div class="row">
+        <h5 class="col stale-kat">Quesadilla</h5>
+      </div>
+      <div class="row">
+        <div class="col gramaz">150g</div>
+        <div class="col-6 jidlo">Quesadilla s kuřecím masem, BBQ omáčkou, čedarem a zakysanou smetanou podávaná s listovým salátem a vinaigrettem</div>
+        <div class="col cena">199 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="smazena" data-category="hlavni">
+      <div class="row">
+        <h5 class="col stale-kat">Smažená jídla</h5>
+      </div>
+      <div class="row">
+        <div class="col gramaz">150g</div>
+        <div class="col-6 jidlo">Smažený kuřecí řízek</div>
+        <div class="col cena">139 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">150g</div>
+        <div class="col-6 jidlo">Smažený sýr</div>
+        <div class="col cena">139 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="testoviny" data-category="hlavni">
+      <div class="row">
+        <h5 class="col stale-kat">Těstoviny</h5>
+      </div>
+      <div class="row">
+        <div class="col gramaz">300g</div>
+        <div class="col-6 jidlo">Pappardelle s vepřovou panenkou, cherry rajčátky, rukolou a grilovaným kozím sýrem, bazalkové pesto</div>
+        <div class="col cena">199 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">300g</div>
+        <div class="col-6 jidlo">Pappardelle s kuřecím masem, česnekovou parmazánovou omáčkou a bylinkovým chipsem - Možnost přípravy bezmasých těstovin</div>
+        <div class="col cena">199 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="salaty" data-category="hlavni">
+      <div class="row">
+        <h5 class="col stale-kat">Saláty</h5>
+      </div>
+      <div class="row">
+        <div class="col gramaz">300g</div>
+        <div class="col-6 jidlo">Salát Caesar s kuřecími prsy, anglickou slaninou, toustovými krutony a hoblinami Parmazánu</div>
+        <div class="col cena">199 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">300g</div>
+        <div class="col-6 jidlo">Trhané listy s marinovanou červenou řepou, ořechy a grilovaným kozím sýrem, pečená bagetka</div>
+        <div class="col cena">210 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="dezerty" data-category="dezerty">
+      <div class="row  ">
+        <h5 class="col stale-kat">Něco sladkého</h5>
+      </div>
+      <div class="row">
+        <div class="col gramaz">2ks</div>
+        <div class="col-6 jidlo">Horké maliny s vanilkovou zmrzlinou a šlehačkou</div>
+        <div class="col cena">99 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">2ks</div>
+        <div class="col-6 jidlo">Palačinky plněné čokoládovým krémem s pomerančovou omáčkou a pomerančovými segmenty</div>
+        <div class="col cena">105 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">2ks</div>
+        <div class="col-6 jidlo">Vafle s vanilkovým krémem a ovocem, šlehačka</div>
+        <div class="col cena">99 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="panaky" data-category="napoje">
+      <div class="row">
+        <h5 class="col stale-kat">Panáky</h5>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,04l</div>
+        <div class="col-6 jidlo">Božkov Republica</div>
+        <div class="col cena">55 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,04l</div>
+        <div class="col-6 jidlo">Captain Morgan</div>
+        <div class="col cena">65 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,04l</div>
+        <div class="col-6 jidlo">Finlandia vodka</div>
+        <div class="col cena">60 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,04l</div>
+        <div class="col-6 jidlo">Gin Beefeater</div>
+        <div class="col cena">65 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,04l</div>
+        <div class="col-6 jidlo">Slivovice</div>
+        <div class="col cena">65 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,04l</div>
+        <div class="col-6 jidlo">Peprmint likér</div>
+        <div class="col cena">45 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,04l</div>
+        <div class="col-6 jidlo">Jägermaister</div>
+        <div class="col cena">70 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,04l</div>
+        <div class="col-6 jidlo">Jack Daniel's / Honey</div>
+        <div class="col cena">95 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,04l</div>
+        <div class="col-6 jidlo">Metaxa *****</div>
+        <div class="col cena">70 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="michane" data-category="napoje">
+      <div class="row  ">
+        <h5 class="col stale-kat">Míchané nápoje</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz"></div>
+        <div class="col-6 jidlo">Chupito (lime sirup, vodka, kok. třešeň)</div>
+        <div class="col cena">65 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz"></div>
+        <div class="col-6 jidlo">Aperol Spritz</div>
+        <div class="col cena">115 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="nealko" data-category="napoje">
+      <div class="row  ">
+        <h5 class="col stale-kat">Nealko nápoje</h5>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,33l</div>
+        <div class="col-6 jidlo">Coca Cola / Zero</div>
+        <div class="col cena">55 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,1l</div>
+        <div class="col-6 jidlo">Kofola</div>
+        <div class="col cena">10 ,-</div>
+      </div>
+      <div class="row">
+        <div class="col gramaz">0,25l</div>
+        <div class="col-6 jidlo">Red Bull</div>
+        <div class="col cena">75 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="kava" data-category="napoje">
+      <div class="row  ">
+        <h5 class="col stale-kat">Káva, teplé nápoje</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz"></div>
+        <div class="col-6 jidlo">Espresso</div>
+        <div class="col cena">55 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz"></div>
+        <div class="col-6 jidlo">Latte macchiato</div>
+        <div class="col cena">70 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz"></div>
+        <div class="col-6 jidlo">Svařené víno</div>
+        <div class="col cena">55 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="piva" data-category="napoje">
+      <div class="row  ">
+        <h5 class="col stale-kat">Piva</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">0,3/0,5l</div>
+        <div class="col-6 jidlo">Gambrinus nepasterizovaný 10 (z tanku)</div>
+        <div class="col cena">27/43 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">0,3/0,5l</div>
+        <div class="col-6 jidlo">Gambrinus nepasterizovaný 11</div>
+        <div class="col cena">31/51 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">0,3/0,5l</div>
+        <div class="col-6 jidlo">Pilsner Urquell</div>
+        <div class="col cena">41/67 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="vina" data-category="napoje">
+      <div class="row  ">
+        <h5 class="col stale-kat">Vína a Sekty</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">0,1l</div>
+        <div class="col-6 jidlo">Bílé, červené</div>
+        <div class="col cena">25 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">0,1l</div>
+        <div class="col-6 jidlo">Prosecco</div>
+        <div class="col cena">42 ,-</div>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">0,75l</div>
+        <div class="col-6 jidlo">Bohemia sekt - brut, demi sec</div>
+        <div class="col cena">300 ,-</div>
+      </div>
+    </div>
+
+    <div class="container text-left stale-div menu-item" id="aperitivy" data-category="napoje">
+      <div class="row  ">
+        <h5 class="col stale-kat">Aperitivy</h5>
+      </div>
+      <div class="row  ">
+        <div class="col gramaz">0,1l</div>
+        <div class="col-6 jidlo">Cinzano Bianco</div>
+        <div class="col cena">60 ,-</div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="menu-img">
+    <button class="listek">KOMPLETNÍ MENU</button>
+    <button class="listek">NÁPOJOVÝ LÍSTEK</button>
+  </div>
 
 
     <h3 id="rezervace" class="h3">REZERVACE</h3>
@@ -239,6 +631,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="JS/script.js"></script>
 </body>
 </html>
