@@ -70,13 +70,20 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-    <i class="fa fa-chevron-down"><a href="#rezervace"></a></i>
+    <a href="#stale" id="carousel-arrow-down"><i class="fa fa-chevron-down"></i></a>
+    <div id="carousel-stred">
+      <img src="images/logo.jpg" id="logo-carousel" alt="logo">
+      <br>
+      <button id="btn-carousel" onclick="b()" type="button">REZERVACE</button>
+    </div>
   </div>
+
+ 
   
 
     <div id="poledni-skryt">
     <h3 id="poledni" class="h3">POLEDNÍ MENU</h3>
-    <h5 id="odpocet">Do konce oběda zbývá: <span id="odpocet-cas"></span></h5>
+    <h5 id="odpocet"><span id="odpocet-cas"></span></h5>
     <div id="poledni-div" class="kus">
           <div class="container text-left stale-div" id="poledni-polevky">
             <div class="row">
@@ -91,11 +98,11 @@
 
           <div class="container text-left stale-div" id="poledni-hlavni">
             <div class="row">
-              <h5 class="col stale-kat">Steaky a jídla z masa</h5>
+              <h5 class="col stale-kat">Hlavní jídla</h5>
             </div>
             <div class="row">
               <div class="col gramaz">200g</div>
-              <div class="col-6 jidlo">Jelení kýta v šípkové omáčce, karlovarský knedlík/brambor. pyré</div>
+              <div class="col-6 jidlo">Jelení kýta v šípkové omáčce, karloletský knedlík/brambor. pyré</div>
               <div class="col cena">169 ,-</div>
             </div>
             <div class="row">
@@ -110,7 +117,7 @@
             </div>
             <div class="row">
               <div class="col gramaz">200g</div>
-              <div class="col-6 jidlo">Smažená sýrová variace (hermelín, eidam), brambory, tat. omáčka</div>
+              <div class="col-6 jidlo">Smažená sýrová letiace (hermelín, eidam), brambory, tat. omáčka</div>
               <div class="col cena">155 ,-</div>
             </div>
             <div class="row">
@@ -486,38 +493,35 @@
   </div>
   
   <div id="menu-img">
-    <button class="listek">KOMPLETNÍ MENU</button>
-    <button class="listek">NÁPOJOVÝ LÍSTEK</button>
+    <button class="listek" onclick="jidelak()">KOMPLETNÍ MENU</button>
+    <button class="listek" onclick="napojak()">NÁPOJOVÝ LÍSTEK</button>
   </div>
 
-
-    <h3 id="rezervace" class="h3">REZERVACE</h3>
-    <div id="rezervace-div" class="kus">
+  <h3 id="rezervace" class="h3">REZERVACE</h3>
+  <div id="rezervace-div" class="kus">
       <form id="rezervace-form" action="php/rezervace.php" method="post">
-        <label for="name">Jméno:</label><br/>
-        <input type="text" id="jmeno" name="jmeno" required><br/>
+          <label for="jmeno">Jméno:</label><br/>
+          <input type="text" id="jmeno" name="jmeno" required><br/>
 
-        <!--<label for="name">Příjmení:</label><br/>
-        <input type="text" id="prijmeni" name="prijmeni" required><br/>-->
+          <label for="email">Email:</label><br/>
+          <input type="email" id="email" name="email" required><br/>
 
-        <label for="email">Email:</label><br/>
-        <input type="email" id="email" name="email" required><br/>
+          <label for="tel">Telefon:</label><br/>
+          <input type="tel" id="tel" name="tel" required><br/>
 
-        <label for="phone">Telefon:</label><br/>
-        <input type="tel" id="tel" name="tel" required><br/>
+          <label for="date">Datum:</label><br/>
+          <input type="date" id="date" name="date" required><br/>
 
-        <label for="date">Datum:</label><br/>
-        <input type="date" id="date" name="date" required><br/>
+          <label for="cas">Čas:</label><br/>
+          <input type="time" id="cas" name="cas" required><br/>
 
-        <label for="time">Čas:</label><br/>
-        <input type="time" id="cas" name="cas" required><br/>
+          <label for="people">Počet osob:</label><br/>
+          <input type="number" id="people" name="people" required min="0"><br/>
 
-        <label for="people">Počet osob:</label><br/>
-        <input type="number" id="people" name="people" required min="0"><br/>
+          <input type="submit" value="Odeslat">
+      </form>
+  </div>
 
-        <input type="submit" value="Odeslat">
-    </form>
-    </div>
 
     <h3 id="kontakt" class="h3">KDE NÁS NAJÍT?</h3>
     <div id="adresa-div" class="kus">
@@ -626,8 +630,10 @@
 
     
     <div id="footer">
+      <div id="footer-content">
         <img src="images/logo.jpg" id="footer-logo">
         <p id="footer-text">Copyright © 2024 Srdcovka u Drsnejch</p>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
