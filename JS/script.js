@@ -259,3 +259,13 @@ updateMenu();
 
 // Update the menu state every minute
 setInterval(updateMenu, 60000);
+
+//------------------------------------------------------------
+
+
+const MyCarusel = document.querySelector('#carouselExampleAutoplaying')
+
+const Carousel = new bootstrap.Carousel(MyCarusel, {
+    interval: 2000,
+    touch: false
+})
