@@ -15,6 +15,12 @@ body{
 
 #carouselExampleAutoplaying{
     height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.carousel-control-next-icon, .carousel-control-next, .carousel-control-prev, .carousel-control-prev-icon{
+    z-index: 2;
 }
 
 #btn-carousel{
@@ -27,6 +33,11 @@ body{
     margin: 2%;
     cursor: pointer;
     width: 30%;
+    z-index: 1;
+}
+
+.logo-carousel{
+    z-index: 1;
 }
 
 #btn-carousel:hover{
@@ -39,6 +50,11 @@ body{
 #carousel-arrow-down{
     display: none;
     text-decoration: #B62931;
+    z-index: 1;
+}
+
+#carousel-stred, #btn-carousel, #carousel-arrow-down {
+    pointer-events: auto; /* add this */
 }
 
 /*#poledni-skryt {
@@ -601,7 +617,7 @@ input[type="submit"]:hover{
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        margin-top: -10%;
+        margin-top: -14%;
     }
 
     #footer-logo{
@@ -613,7 +629,7 @@ input[type="submit"]:hover{
     }
 
     #footer-text{
-       margin-right: -80%;
+       margin-right: -70%;
     }
 }
 
@@ -646,5 +662,11 @@ input[type="submit"]:hover{
 
     #stale{
         margin-top: 0%;
+    }
+
+
+    #footer-text{
+        margin-right: -55%;
+        margin-top: -10%;
     }
 }
