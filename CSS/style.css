@@ -13,17 +13,32 @@ body{
     justify-content: center;
 }
 
-#carouselExampleAutoplaying{
-    height: 100vh;
+#uvod {
+    position: relative;
+}
+
+#carouselExampleAutoplaying {
     z-index: 0;
     pointer-events: none;
 }
 
-.carousel-control-next-icon, .carousel-control-next, .carousel-control-prev, .carousel-control-prev-icon{
-    z-index: 2;
+#carousel-stred {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
 }
 
-#btn-carousel{
+#logo-carousel {
+    z-index: 1;
+    width: 30vw;
+}
+
+#btn-carousel {
     border-radius: 7px;
     color: #B62931;
     background-color: #e1e1e1;
@@ -32,37 +47,27 @@ body{
     font-weight: 500;
     margin: 2%;
     cursor: pointer;
-    width: 30%;
+    width: 100%;
     z-index: 1;
+    align-self: center;
+    margin-right: 20vw;
 }
 
-.logo-carousel{
-    z-index: 1;
-}
-
-#btn-carousel:hover{
-    scale: 1.05;
+#btn-carousel:hover {
+    transform: scale(1.05);
     background-color: #B62931;
     color: #e1e1e1;
     cursor: pointer;
 }
 
-#carousel-arrow-down{
-    display: none;
-    text-decoration: #B62931;
+#carousel-arrow-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #e1e1e1;
     z-index: 1;
-}
-
-#carousel-stred, #btn-carousel, #carousel-arrow-down {
-    pointer-events: auto; /* add this */
-}
-
-/*#poledni-skryt {
     display: none;
-  }*/
-
-#poledni{
-    margin-top: -85%;
+    scale: 2;
 }
 
 #odpocet{
@@ -90,10 +95,6 @@ body{
     justify-content: center;
     align-items: center;
     text-align: left;
-}
-
-#stale{
-    margin-top: -95%;
 }
 
 #stale-tlacitka{
@@ -361,23 +362,24 @@ input[type="submit"]:hover{
     position: relative;
     background-color: #313131;
     color: #F7F7F7;
-    flex-wrap: nowrap; 
+    flex-wrap: wrap; 
     height: 15vh;
-    margin-bottom: -5%;
 }
 
 #footer-content{
-    width: 90%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    align-items: center;
     text-align: center;
+    height: 15vh;
+    bottom: 0%;
 }
 
 #footer-logo{
-    width: 20vh;
-    margin-top: -6%;
+    width: 15vh;
+    margin-top: 0;
+    padding: 0;
 }
 
 #footer-text{
@@ -385,18 +387,24 @@ input[type="submit"]:hover{
     font-size: 90%;
     color: #A8A8A8;
     white-space: nowrap;
-    margin-top: -6%;
+    margin-top: 0;
+    padding: 0;
 }
 
 
 
 
-@media (min-width: 768px){
+@media (min-width: 767px){
     
+    #uvod{
+        height: 85vh;
+        margin-bottom: 15vh;
+    }
+
     #carouselExampleAutoplaying{
-        margin-top: -5%;
         z-index: -1;
         position: relative;
+        height: 85vh;
     }
 
     #carousel-stred{
@@ -404,23 +412,26 @@ input[type="submit"]:hover{
         height: 30%;
         z-index: 1;
         position: absolute;
-        top: 50%;
-        left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
+        top: 35%;
     }
 
     #logo-carousel{
-       margin-top: 0%;
+        width: 15vw;
     }
 
     #btn-carousel{
-        margin-top: 0%;
+        width: 50%;
+        margin-right: 0vw;
     }
 
     #carousel-arrow-down{
         display: block;
         text-decoration: #B62931;
+        scale: 1.7;
+        bottom: 10%;
+
     }
 
     .h3{
@@ -610,41 +621,31 @@ input[type="submit"]:hover{
     }
 
     #footer{
-        margin-bottom: 0%;
+        bottom: 0%;
     }
 
     #footer-content{
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start;
-        margin-top: -14%;
+        align-items: center;
+        width: 100%;
+        padding: 0 10%;
     }
 
     #footer-logo{
-        width: 30vh;
-        align-self: left;
-        margin-top: 10%;
-        margin-left: -85%;
+        width: 20vh;
+        margin: 0;
 
     }
 
     #footer-text{
-       margin-right: -70%;
+        font-size: 90%;
+        color: #A8A8A8;
+        white-space: nowrap;
+        margin: 0;
     }
 }
-
-
-
-@media (max-width: 767px) and (min-width:425px){
-    #poledni{
-        margin-top: -60%;
-    }
-
-    #stale{
-        margin-top: -70%;
-    }
-}
-
 
 
 @media (max-width: 1023px) and (min-width:768px){
@@ -662,11 +663,5 @@ input[type="submit"]:hover{
 
     #stale{
         margin-top: 0%;
-    }
-
-
-    #footer-text{
-        margin-right: -55%;
-        margin-top: -10%;
     }
 }
