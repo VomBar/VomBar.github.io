@@ -16,16 +16,16 @@
 
   <nav id="myNavbar" class="navbar navbar-expand-lg bg-dark   border-bottom border-body sticky-top" data-bs-theme="dark">
         <div class="container">
-          <a class="navbar-brand" href="#background">
-            <img src="images/logo.jpg" alt="logo" width="60">
+          <a class="navbar-brand" href="#carouselExampleAutoplaying">
+            <img src="images/logo.png" alt="logo" width="60">
           </a>
       
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
       
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+          <div class="collapse navbar-collapse" id="navbarNav" onclick="spustit()">
+            <ul class="navbar-nav ms-auto" id="menucko">
               <li class="nav-item">
                 <a class="nav-link"  href="#stale">MENU</a>
               </li>
@@ -49,38 +49,35 @@
         </div>
   </nav>
     
-      
-  <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel" >
-    <div class="carousel-inner h-100">
-      <div class="carousel-item active">
-        <img src="images/img1.jpg" class="d-block w-100" alt="...">
+  <div id="uvod">
+    <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active">
+          <img src="images/img1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/img2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/img3.jpg" class="d-block w-100" alt="...">
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="images/img2.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="images/img3.jpg" class="d-block w-100" alt="...">
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-    <a href="#stale" id="carousel-arrow-down"><i class="fa fa-chevron-down"></i></a>
+
     <div id="carousel-stred">
-      <img src="images/logo.jpg" id="logo-carousel" alt="logo">
+      <img src="images/logo.png" id="logo-carousel" alt="logo">
       <br>
-      <button id="btn-carousel" onclick="b()" type="button">REZERVACE</button>
+      <a href="#rezervace"><button id="btn-carousel" type="button">REZERVACE</button></a>
     </div>
-  </div>
+
+    <a href="#stale" id="carousel-arrow-down"><i class="fa fa-chevron-down"></i></a>
+  </div>   
 
  
-  
-
     <div id="poledni-skryt">
     <h3 id="poledni" class="h3">POLEDNÍ MENU</h3>
     <h5 id="odpocet"><span id="odpocet-cas"></span></h5>
@@ -165,7 +162,7 @@
       <div class="row  ">
         <div class="col gramaz">120g</div>
         <div class="col-6 jidlo"> Tatarák z hovězího masa, 6ks topinek</div>
-        <div class="col cena">219 ,-</div>
+        <div class="col  cena">219 ,-</div>
       </div>
       <div class="row  ">
         <div class="col gramaz">200g</div>
@@ -631,7 +628,7 @@
     
     <div id="footer">
       <div id="footer-content">
-        <img src="images/logo.jpg" id="footer-logo">
+        <img src="images/logo.png" id="footer-logo">
         <p id="footer-text">Copyright © 2024 Srdcovka u Drsnejch</p>
       </div>
     </div>
