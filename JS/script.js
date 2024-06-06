@@ -2,28 +2,36 @@
 
 //scrollování menu a zabalení
 
+
 $(document).ready(function () {
-  // menu nepřekrývá nadpis při scrollu
-  $('a[href^="#"]').on('click', function (event) {
+    $('a[href^="#"]').on('click', function (event) {
       let target = $($(this).attr('href'));
-
+  
       if (target.length) {
-          event.preventDefault();
-          $('html, body').animate({
-              scrollTop: target.offset().top - $('nav').outerHeight()
-          }, 600);
-
-          // zabalení menu po kliknutí na polozku
-          let menu = document.getElementById('menu-list');
-          menu.classList.add('collapsed');
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top - $('nav').outerHeight()
+        }, 600);
+  
+        // Zavření menu po kliknutí na položku
+        $('.navbar-collapse').collapse('hide');
       }
+    });
   });
-});
 
 
 //------------------------------------------------------------
 
 //rozbaleni a zabaleni FAQ
+
+function toggleDisplay(elementId) {
+    var element = document.getElementById(elementId);
+    if (element.style.display === "none" || element.style.display === "") {
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+}
 
 
 function dotaz1(){
@@ -78,84 +86,6 @@ document.getElementById('napoje').addEventListener('click', () => show('napoje')
 
 //------------------------------------------------------------
 
-//odpocet a zobrazeni poledniho menu
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  const lunchSpecialDiv = document.getElementById('poledni-skryt');
-  const closeBtn = document.getElementById('closeBtn');
-  
-  // Function to check if the current time is within the specified range
-  function isLunchTime() {
-      const now = new Date();
-      const hours = now.getHours();
-      const timezoneOffset = now.getTimezoneOffset() / 60; // Convert minutes to hours
-
-      // Check if the current time is between 11 am and 2 pm GMT+1
-      return hours >= 11 + timezoneOffset && hours <= 15 + timezoneOffset;
-  }
-
-  
-  function updateLunchSpecial() {
-      if (isLunchTime()) {
-          lunchSpecialDiv.style.display = 'block';
-          setTimer();
-      } else {
-          lunchSpecialDiv.style.display = 'none';
-      }
-  }
-
-  // Daily timer
-  function setTimer() {
-      const endDate = new Date();
-      endDate.setHours(14); // (2 pm GMT+1)
-      endDate.setMinutes(0);
-      endDate.setSeconds(0);
-
-      const now = new Date();
-      const timeDifference = endDate - now;
-
-      // Display the time difference as a countdown timer
-      displayTimer(timeDifference);
-
-      
-      const timerInterval = setInterval(function () {
-          const timeDifference = endDate - new Date();
-          displayTimer(timeDifference);
-
-          
-          if (timeDifference <= 0) {
-              clearInterval(timerInterval);
-              lunchSpecialDiv.style.display = 'none';
-              // Show the lunch special again after 3 minutes
-              setTimeout(function () {
-                  updateLunchSpecial();
-              }, 180000);
-          }
-      }, 1000);
-  }
-
-  // Display timer
-  function displayTimer(timeDifference) {
-      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-      document.getElementById('odpocet').innerText = `Zbývá: ${hours}h ${minutes}m`;
-  }
-
-  closeBtn.addEventListener('click', function () {
-      lunchSpecialDiv.style.display = 'none';
-      setTimeout(function () {
-          updateLunchSpecial();
-      }, 180000);
-  });
-
-  updateLunchSpecial();
-  setInterval(updateLunchSpecial, 60000);
-});
-
-
-//------------------------------------------------------------
-
 //otevreni listku v nove karte
 
 function jidelak(){
@@ -169,9 +99,11 @@ function napojak(){
 
 //------------------------------------------------------------
 
+
+//rezervace
+
 $(document).ready(function () {
     $('#rezervace-form').submit(function (e) {
-        // Prevent default form submission
         e.preventDefault();
 
         var formData = $(this).serialize();
@@ -196,25 +128,27 @@ $(document).ready(function () {
 
 //------------------------------------------------------------
 
-// Get the elements for the countdown timer and the menu container
+// poledni menu odpocet
+
+//deklarace divu
 const countdown = document.getElementById('odpocet-cas');
 const poledniMenu = document.getElementById('poledni-skryt');
 
-// Function to set the countdown timer
+// nastaveni odpoctu
 function setTimer() {
   const lunchEndTime = new Date();
-  lunchEndTime.setHours(15, 0, 0, 0); // Set lunch end time to 3 PM
+  lunchEndTime.setHours(15, 0, 0, 0); 
 
-  // Update the timer every second
+  // update casu kazdou vterinu
   const intervalId = setInterval(() => {
     const now = new Date();
     const timeRemaining = lunchEndTime - now;
 
-    // Calculate hours and minutes remaining
+    // vypocet zbyvajiciho casu
     const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
     const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
 
-    // Format the time as "Xh Ymin"
+    // formatovani odpoctu
     let formattedTime;
     if (hours > 0) {
       formattedTime = `${hours}h ${minutes}min`;
@@ -222,10 +156,10 @@ function setTimer() {
       formattedTime = `${minutes}min`;
     }
 
-    // Update the countdown display
+    // update odpoctu
     countdown.textContent = `Do konce oběda zbývá: ${formattedTime}`;
 
-    // Clear the interval when lunch time ends
+    // smazani odpoctu
     if (timeRemaining <= 0) {
       clearInterval(intervalId);
       countdown.textContent = "Oběd skončil!";
@@ -233,18 +167,18 @@ function setTimer() {
   }, 1000);
 }
 
-// Function to check if it's lunchtime
+// overeni jestli je cas obeda
 function isLunchtime() {
   const now = new Date();
   const lunchStartTime = new Date();
-  lunchStartTime.setHours(11, 0, 0, 0); // Set lunch start time to 11 AM
+  lunchStartTime.setHours(11, 0, 0, 0);
   const lunchEndTime = new Date();
-  lunchEndTime.setHours(15, 0, 0, 0); // Set lunch end time to 3 PM
+  lunchEndTime.setHours(15, 0, 0, 0); 
 
   return now >= lunchStartTime && now <= lunchEndTime;
 }
 
-// Update the menu visibility and timer based on the time
+// update casu a zobrazeni menu
 function updateMenu() {
   if (isLunchtime()) {
     poledniMenu.style.display = 'block';
@@ -254,18 +188,10 @@ function updateMenu() {
   }
 }
 
-// Call the updateMenu function to initially set the menu state
 updateMenu();
 
-// Update the menu state every minute
+
 setInterval(updateMenu, 60000);
 
 //------------------------------------------------------------
 
-
-const MyCarusel = document.querySelector('#carouselExampleAutoplaying')
-
-const Carousel = new bootstrap.Carousel(MyCarusel, {
-    interval: 2000,
-    touch: false
-})
