@@ -27,7 +27,7 @@ $(document).ready(function () {
 function toggleDisplay(elementId) {
     var element = document.getElementById(elementId);
     if (element.style.display === "none" || element.style.display === "") {
-        element.style.display = "block";
+        element.style.display = "flex";
     } else {
         element.style.display = "none";
     }
@@ -101,7 +101,7 @@ function napojak(){
 
 
 //rezervace
-
+/* 
 $(document).ready(function () {
     $('#rezervace-form').submit(function (e) {
         e.preventDefault();
@@ -123,7 +123,7 @@ $(document).ready(function () {
             }
         });
     });
-});
+}); */
 
 
 //------------------------------------------------------------
@@ -195,3 +195,13 @@ setInterval(updateMenu, 60000);
 
 //------------------------------------------------------------
 
+//fake odeslani rezervace
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('rezervace-form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    alert('Formulář byl úspěšně odeslán!');
+    this.reset(); 
+  });
+});
