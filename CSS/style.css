@@ -237,13 +237,14 @@ input[type="submit"]:hover{
     width: 90%;
     margin-left: 5%;
     font-size: larger;
+    margin-bottom: 0%;
 }
 
 #adresa-p{
     text-align: left;
     width: 90%;
     margin-left: 5%;
-    margin-top: -10%;
+    margin-top: 1%;
 }
 
 #kontakt-div{
@@ -352,6 +353,7 @@ input[type="submit"]:hover{
     text-align: justify;
     text-align-last: center;
     margin-top: 2vh;
+    width: 100%;
 }
 
 #footer{
@@ -553,10 +555,6 @@ input[type="submit"]:hover{
         margin-top: 5%;
     }
 
-    #adresa-p{
-        margin-top: -2%;
-    }
-    
     #onas-p{
         width: 80%;
         align-items: left;
@@ -611,7 +609,7 @@ input[type="submit"]:hover{
     }
     
     .dotaz-unroll{
-        width: 90%;
+        width: auto;
         justify-content: center;
         text-align: justify;
         flex-direction: column;
